@@ -1,0 +1,24 @@
+{
+  "name": "Modalify",
+  "description": "Fully responsive, Sleak minimalism Flat design, Modal.",
+  "version": "0.0.1",
+  "author": "Steve Lacy me@slacy.me (http://slacy.me)",
+  "homepage": "http://github.com/stevelacy/modalify",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/stevelacy/modalify.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-bump": "^0.1.6",
+    "gulp-stylus": "^0.1.0",
+    "gulp-coffee": "^1.4.1",
+    "gulp-jade": "^0.4.2",
+    "gulp-livereload": "^1.2.0"
+  }
+}

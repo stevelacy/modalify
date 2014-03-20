@@ -1,0 +1,50 @@
+html
+  head
+    title Modalify
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+
+
+  body
+    .header
+      h2
+        a(href="/") Modalify
+      a(href="https://github.com/stevelacy/modalify" target="_blank")
+        img.github(src="github.png")
+
+    .content
+
+      h1 Fully responsive. Sleak minimalism. Flat design.
+
+
+      #simpleUsage
+        h1 Basic
+        br
+        p 
+          | Any html element can be used as the modal base.
+        br
+        p
+          | The modal can be closed with the esc key, or the close button.
+          br
+          | 
+
+      .box
+        button#simple.button(data-modalify="#simpleUsage") Open Modal
+
+      .box
+        h1 
+          a(href="examples.html") More examples
+        br
+
+        h1
+          a(href="https://github.com/stevelacy/modalify/" target="_blank") Documentation
+
+    // Required modalify css and js files
+    link(rel="stylesheet" type="text/css" href="css/modalify.css")
+    script(type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js")
+    script(type="text/javascript" src="js/modalify.js")
+    script
+      $("#simple").modalify();
+
+
+    // Example page css
+    link(rel="stylesheet" type="text/css" href="./css/example.css")
