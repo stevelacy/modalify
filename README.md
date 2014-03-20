@@ -49,7 +49,7 @@ Commands:
 
 `gulp` will build and run gulp.watchers with [livereload](https://github.com/napcs/node-livereload)
 
-The built plugin will be in [build/](https://github.com/stevelacy/modalify/build/)
+The built plugin will be in [build/](https://github.com/stevelacy/modalify/tree/master/build)
 
 
 ## Options
