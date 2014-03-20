@@ -1,0 +1,97 @@
+@font-face {
+  font-family: 'lane';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Lane'), local('Lane'), url("./font/lane.woff") format('woff');
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.font,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+button,
+input {
+  font-family: 'Lane';
+}
+.trans,
+.box,
+.button,
+.header {
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+body {
+  width: 100%;
+  background: #1abc9c;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+.header {
+  width: 100%;
+  height: 75px;
+  background: #fafafa;
+  border-bottom: 2px solid #efefef;
+  padding: 25px;
+}
+.header a {
+  color: #000;
+}
+.header .github {
+  position: absolute;
+  right: 15;
+  top: 15;
+  height: 42px;
+}
+.content {
+  text-align: center;
+  margin-top: 100px;
+}
+.content > h1 {
+  color: #fff;
+}
+.box {
+  width: 50%;
+  margin: 5% 25% 10% 25%;
+  text-align: center;
+}
+.button {
+  display: inline-block;
+  min-width: 100px;
+  padding: 30px 45px 30px 45px;
+  border: none;
+  background: #fafafa;
+  font-size: 30px;
+  box-shadow: 0 0 2px #555;
+}
+.button:focus {
+  outline: 0;
+  box-shadow: 0 0 0;
+}
+@media all and (max-width: 800px) {
+  .box {
+    margin-top: 25%;
+  }
+  .button {
+    padding: 10px;
+    font-size: 20px;
+  }
+}

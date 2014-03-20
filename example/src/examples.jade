@@ -1,0 +1,82 @@
+html
+  head
+    title Modalify - Examples
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+
+
+  body
+    .header
+      h2
+        a(href="/") Modalify
+      a(href="https://github.com/stevelacy/modalify" target="_blank")
+        img.github(src="github.png")
+
+    .content
+
+      h1 Examples
+
+      #simpleUsage
+        h1 Basic
+        br
+        p Any html element can be used as the target
+        br
+        pre
+          $("#simpleUsage").modalify();
+      .box
+        button#simple.button(data-modalify="#simpleUsage") Simple usage
+
+
+      #optionToggle
+        h1 Toggle option
+        br
+        p Any jQuery Toggle animation is supported
+        pre
+          $("#toggle").modalify({toggle:"slideToggle"});
+      .box
+        button#toggle.button(data-modalify="#optionToggle") Toggle option
+
+      #optionSpeed
+        h1 Speed option
+        br
+        p milliseconds of time, or jquery time string
+        pre
+          $("#simple").modalify({speed: 500});
+        br  
+        pre
+          $("#simple").modalify({speed: "slow"});
+      .box
+        button#speed.button(data-modalify="#optionSpeed") Speed option
+
+      #optionHeight
+        h1 Height 500px
+        br
+        pre
+          $("#height").modalify({height: "500px"});
+      .box
+        button#height.button(data-modalify="#optionHeight") Height option
+
+      #largeContent
+        h1 Large content
+        br
+        img(src="http://placekitten.com/g/600/400" alt="Random kitten image")
+      .box
+        button#large.button(data-modalify="#largeContent") Large content
+
+
+    // Required modalify css and js files
+    link(rel="stylesheet" type="text/css" href="../build/modalify.css")
+    script(type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js")
+    script(type="text/javascript" src="../build/modalify.js")
+    script
+      $("#simple").modalify();
+
+      $("#toggle").modalify({toggle:"slideToggle"});
+
+      $("#speed").modalify({speed: 500});
+
+      $("#height").modalify({height: "500px"});
+
+      $("#large").modalify();
+
+    // Example page css
+    link(rel="stylesheet" type="text/css" href="./example.css")
