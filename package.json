@@ -20,5 +20,5 @@
     "gulp-coffee": "^1.4.1",
     "gulp-jade": "^0.4.2",
     "gulp-livereload": "^1.2.0"
-  },
+  }
 }
