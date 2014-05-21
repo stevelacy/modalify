@@ -1,5 +1,31 @@
-<html><head><title>Modalify - Examples</title><meta name="viewport" content="width=device-width, initial-scale=1"/></head><body><div class="header"><h2><a href="index.html">Modalify</a></h2><a href="https://github.com/stevelacy/modalify" target="_blank"><img src="github.png" class="github"/></a></div><div class="content"><h1>Examples</h1><div id="simpleUsage"><h1>Basic</h1><br/><p>Any html element can be used as the target</p><br/><pre>$("#simpleUsage").modalify();</pre></div><div class="box"><button id="simple" data-modalify="#simpleUsage" class="button">Simple usage</button></div><div id="optionToggle"><h1>Toggle option</h1><br/><p>Any jQuery Toggle animation is supported</p><pre>$("#toggle").modalify({toggle:"slideToggle"});</pre></div><div class="box"><button id="toggle" data-modalify="#optionToggle" class="button">Toggle option</button></div><div id="optionSpeed"><h1>Speed option</h1><br/><p>milliseconds of time, or jquery time string</p><pre>$("#simple").modalify({speed: 500});</pre><br/><pre>$("#simple").modalify({speed: "slow"});</pre></div><div class="box"><button id="speed" data-modalify="#optionSpeed" class="button">Speed option</button></div><div id="optionHeight"><h1>Height 500px</h1><br/><pre>$("#height").modalify({height: "500px"});</pre></div><div class="box"><button id="height" data-modalify="#optionHeight" class="button">Height option</button></div><div id="largeContent"><h1>Large content</h1><br/><img src="http://placekitten.com/g/600/400" alt="Random kitten image"/></div><div class="box"><button id="large" data-modalify="#largeContent" class="button">Large content</button></div></div><!-- Required modalify css and js files--><link rel="stylesheet" type="text/css" href="css/modalify.css"/><script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script><script type="text/javascript" src="js/modalify.js"></script><script>$("#simple").modalify();
-$("#toggle").modalify({toggle:"slideToggle"});
-$("#speed").modalify({speed: 500});
-$("#height").modalify({height: "500px"});
-$("#large").modalify();</script><!-- Example page css--><link rel="stylesheet" type="text/css" href="./css/example.css"/></body></html>
+<html><head><title>Modalify - Examples</title><meta name="viewport" content="width=device-width, initial-scale=1"/></head><body><div class="header"><h2><a href="/">Modalify</a></h2><a href="https://github.com/stevelacy/modalify" target="_blank"><img src="github.png" class="github"/></a></div><div class="content"><h1>Examples</h1><div id="simpleUsage" class="hidden"><div class="closeModalify closeModalifyX">&times;</div><h1>Basic</h1><br/><p>Any html element can be used as the target</p><br/><pre>$("#simple").click(function(){
+  $("#simpleUsage").modalify();
+});
+</pre></div><div class="box"><button id="simple" class="button">Simple usage</button></div><div id="optionToggle" class="hidden"><div class="closeModalify closeModalifyX">&times;</div><h1>Toggle option</h1><br/><p>Any jQuery Toggle animation is supported</p><pre>$("#optionToggle").modalify({
+  toggle:"slideToggle"
+});</pre></div><div class="box"><button id="toggle" class="button">Toggle option</button></div><div id="optionSpeed" class="hidden"><div class="closeModalify closeModalifyX">&times;</div><h1>Speed option</h1><br/><p>milliseconds of time, or jquery time string</p><pre>$("#speed").click(function(){
+  $("#optionSpeed").modalify({speed: 500});
+});</pre></div><div class="box"><button id="speed" class="button">Speed option</button></div><div id="optionHeight" class="hidden"><div class="closeModalify closeModalifyX">&times;</div><h1>Height 500px</h1><br/><pre>$("#height").click(function(){
+  $("#optionHeight").modalify("open", {
+    height: "500px"
+  });
+});</pre></div><div class="box"><button id="height" class="button">Height option</button></div><div id="largeContent" class="hidden"><div class="closeModalify closeModalifyX">&times;</div><h1>Large content</h1><br/><img src="http://placekitten.com/g/600/400" alt="Random kitten image"/></div><div class="box"><button id="large" data-modalify="#largeContent" class="button">Large content</button></div></div><!-- Required modalify css and js files--><link rel="stylesheet" type="text/css" href="css/modalify.css"/><script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script><script type="text/javascript" src="js/modalify.js"></script><script>$("#simple").click(function(){
+  $("#simpleUsage").modalify();
+});
+
+$("#toggle").click(function(){
+  $("#optionToggle").modalify({toggle:"slideToggle"});
+});
+
+$("#speed").click(function(){
+  $("#optionSpeed").modalify({speed: 500});
+});
+
+$("#height").click(function(){
+  $("#optionHeight").modalify("open", {height: "500px"});
+});
+
+$("#large").click(function(){
+  $("#largeContent").modalify();
+});
+</script><!-- Example page css--><link rel="stylesheet" type="text/css" href="./css/example.css"/></body></html>

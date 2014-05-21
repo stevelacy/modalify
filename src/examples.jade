@@ -7,7 +7,7 @@ html
   body
     .header
       h2
-        a(href="index.html") Modalify
+        a(href="/") Modalify
       a(href="https://github.com/stevelacy/modalify" target="_blank")
         img.github(src="github.png")
 
@@ -15,47 +15,61 @@ html
 
       h1 Examples
 
-      #simpleUsage
+      #simpleUsage.hidden
+        .closeModalify.closeModalifyX &times;
         h1 Basic
         br
         p Any html element can be used as the target
         br
-        pre
-          $("#simpleUsage").modalify();
+        pre.
+          $("#simple").click(function(){
+            $("#simpleUsage").modalify();
+          });
+
       .box
-        button#simple.button(data-modalify="#simpleUsage") Simple usage
+        button#simple.button Simple usage
 
 
-      #optionToggle
+      #optionToggle.hidden
+        .closeModalify.closeModalifyX &times;
         h1 Toggle option
         br
         p Any jQuery Toggle animation is supported
-        pre
-          $("#toggle").modalify({toggle:"slideToggle"});
+        pre.
+          $("#optionToggle").modalify({
+            toggle:"slideToggle"
+          });
       .box
-        button#toggle.button(data-modalify="#optionToggle") Toggle option
+        button#toggle.button Toggle option
 
-      #optionSpeed
+      #optionSpeed.hidden
+        .closeModalify.closeModalifyX &times;
         h1 Speed option
         br
         p milliseconds of time, or jquery time string
-        pre
-          $("#simple").modalify({speed: 500});
-        br  
-        pre
-          $("#simple").modalify({speed: "slow"});
+        
+        pre.
+          $("#speed").click(function(){
+            $("#optionSpeed").modalify({speed: 500});
+          });
       .box
-        button#speed.button(data-modalify="#optionSpeed") Speed option
+        button#speed.button Speed option
 
-      #optionHeight
+      #optionHeight.hidden
+        .closeModalify.closeModalifyX &times;
         h1 Height 500px
         br
-        pre
-          $("#height").modalify({height: "500px"});
+        pre.
+          $("#height").click(function(){
+            $("#optionHeight").modalify("open", {
+              height: "500px"
+            });
+          });
       .box
-        button#height.button(data-modalify="#optionHeight") Height option
+        button#height.button Height option
 
-      #largeContent
+      #largeContent.hidden
+        .closeModalify.closeModalifyX &times;
         h1 Large content
         br
         img(src="http://placekitten.com/g/600/400" alt="Random kitten image")
@@ -67,16 +81,26 @@ html
     link(rel="stylesheet" type="text/css" href="css/modalify.css")
     script(type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js")
     script(type="text/javascript" src="js/modalify.js")
-    script
-      $("#simple").modalify();
+    script.
+      $("#simple").click(function(){
+        $("#simpleUsage").modalify();
+      });
 
-      $("#toggle").modalify({toggle:"slideToggle"});
+      $("#toggle").click(function(){
+        $("#optionToggle").modalify({toggle:"slideToggle"});
+      });
 
-      $("#speed").modalify({speed: 500});
+      $("#speed").click(function(){
+        $("#optionSpeed").modalify({speed: 500});
+      });
 
-      $("#height").modalify({height: "500px"});
+      $("#height").click(function(){
+        $("#optionHeight").modalify("open", {height: "500px"});
+      });
 
-      $("#large").modalify();
+      $("#large").click(function(){
+        $("#largeContent").modalify();
+      });
 
     // Example page css
     link(rel="stylesheet" type="text/css" href="./css/example.css")
