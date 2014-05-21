@@ -16,7 +16,8 @@ html
       h1 Fully responsive. Sleak minimalism. Flat design.
 
 
-      #simpleUsage
+      #simpleUsage.hidden
+        .closeModalify.closeModalifyX &times;
         h1 Basic
         br
         p 
@@ -25,10 +26,9 @@ html
         p
           | The modal can be closed with the esc key, or the close button.
           br
-          | 
 
       .box
-        button#simple.button(data-modalify="#simpleUsage") Open Modal
+        button#simple.button Open Modal
 
       .box
         h1 
@@ -42,8 +42,10 @@ html
     link(rel="stylesheet" type="text/css" href="../build/modalify.css")
     script(type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js")
     script(type="text/javascript" src="../build/modalify.js")
-    script
-      $("#simple").modalify();
+    script.
+      $("#simple").click(function(){
+        $("#simpleUsage").modalify();
+      });
 
 
     // Example page css

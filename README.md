@@ -19,25 +19,25 @@ Include them in the html along with [jQuery](http://jquery.com/download/)
 <script type="text/javascript" src="modalify.js"></script>
 
 ```
-There are two elements. The modal (target), and the 'instigator' (button).
+Or require the plugin as an AMD loaded plugin.
 
-The instigator should have a `data-modalify` attribute pointing to the target element.
-
-This example shows a button used as the instigator, with the target being a div
+## Example
 
 ```html
 
-<div id="modal">
+<div id="modal" class="hidden">
   Content here
 </div>
 
-<button id="showModal" data-modalify="#modal">Click to open</button>
+<button id="showModal">Click to open</button>
 
 ```
 Add the following to your html, or in your jQuery file.
 ```html
 <script>
-  $("#showModal").modalify();
+  $("#showModal").click(function(){
+    $("#modal").modalify();
+  });
 </script>
 ```
 
@@ -52,13 +52,26 @@ Commands:
 The built plugin will be in [build/](https://github.com/stevelacy/modalify/tree/master/build)
 
 
-## Options
+## API
 
 ```js
-.modalify(Object);
+.modalify(String type, Object options);
+```
+### type
+Open or Close modal
+
+```
+default: "open"
+parameters: String "open", "close"
 ```
 
-### toggle
+### options
+```
+default: "null"
+parameters: Object
+```
+
+#### toggle
 
 ```
 toggle: "option"
@@ -71,7 +84,7 @@ Default: "fadeToggle"
     fadeToggle
     slideToggle
 
-### speed
+#### speed
 
 ```
 speed: milliseconds
@@ -86,7 +99,7 @@ Default: 500
     "slow"
     "fast"
 
-### height
+#### height
 
 ```
 height: number size

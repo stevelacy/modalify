@@ -1,3 +1,6 @@
+.hidden {
+  display: none;
+}
 .modalify {
   position: fixed;
   top: 25%;
@@ -12,7 +15,7 @@
 .modalify img {
   max-width: 100%;
 }
-.modalify .closeModal {
+.modalify .closeModalifyX {
   position: absolute;
   right: 10px;
   top: 12px;
@@ -22,7 +25,7 @@
   line-height: 70%;
   cursor: default;
 }
-.modalify .closeModal:hover {
+.modalify .closeModalifyX:hover {
   background: rgba(0,0,0,0.1);
 }
 @media all and (max-width: 800px) {
@@ -32,7 +35,7 @@
     top: 5%;
     left: 5%;
   }
-  .modalify .closeModal {
+  .modalify .closeModalifyX {
     top: 22px;
     right: 20px;
     width: 40px;
