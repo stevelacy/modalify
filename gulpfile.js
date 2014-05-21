@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var jade = require('gulp-jade');
 var bump = require('gulp-bump');
+var header = require('gulp-header');
 var stylus = require('gulp-stylus');
 var coffee = require('gulp-coffee');
 var reload = require('gulp-livereload');
@@ -13,6 +14,7 @@ gulp.task('bump', function(){
   .pipe(bump())
   .pipe(gulp.dest('./'));
 });
+
 
 gulp.task('coffee', function(){
   gulp.src('./src/*.coffee')
@@ -87,4 +89,29 @@ gulp.task('watch', function(){
   //gulp.watch(['./example/src/*', '!./example/src/*.jade', '!./example/src/*.styl', '!./example/src/*.coffee'], ['example:copy']);
 });
 
+
 gulp.task('default', ['coffee', 'stylus', 'jade', 'copy', 'watch']);
+
+
+gulp.task('publish', ['bump'], function(){
+   setTimeout(
+    function() {
+      var pkg = require('./package.json');
+      var date = new Date();
+      var year = date.getFullYear();
+      var banner = [
+      '/**',
+      ' * <%= pkg.name %> v<%= pkg.version %>',
+      ' * <%= pkg.repository.url %>',
+      ' * <%= pkg.description %> ',
+      ' * Copyright <%= year %> - <%= pkg.author %> ',
+      ' * License: <%= pkg.licenses[0].type %>',
+      '**/',
+      ''
+      ].join('\n');
+      gulp.src('./src/modalify.coffee')
+      .pipe(coffee())
+      .pipe(header(banner, {pkg: pkg, year: year}))
+      .pipe(gulp.dest(build));
+    }, 200);
+});
