@@ -9,7 +9,9 @@
   $("#optionHeight").modalify("open", {
     height: "500px"
   });
-});</pre></div><div class="box"><button id="height" class="button">Height option</button></div><div id="largeContent" class="hidden"><div class="closeModalify closeModalifyX">&times;</div><h1>Large content</h1><br/><img src="http://placekitten.com/g/600/400" alt="Random kitten image"/></div><div class="box"><button id="large" data-modalify="#largeContent" class="button">Large content</button></div></div><!-- Required modalify css and js files--><link rel="stylesheet" type="text/css" href="css/modalify.css"/><script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script><script type="text/javascript" src="js/modalify.js"></script><script>$("#simple").click(function(){
+});</pre></div><div class="box"><button id="height" class="button">Height option</button></div><div id="largeContent" class="hidden"><div class="closeModalify closeModalifyX">&times;</div><h1>Large content</h1><br/><img src="http://placekitten.com/g/600/400" alt="Random kitten image"/></div><div class="box"><button id="large" class="button">Large content</button></div><div id="closeButton" class="hidden"><div class="closeModalify closeModalifyX">&times;</div><h1>Using another element to close modal</h1><br/><pre>$("#otherElement").click(function(){
+  $("#closeButton").modalify("close");
+});</pre><div id="otherElement" class="button">Click to Close</div></div><div class="box"><button id="close" class="button">Close with element</button></div></div><!-- Required modalify css and js files--><link rel="stylesheet" type="text/css" href="css/modalify.css"/><script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script><script type="text/javascript" src="js/modalify.js"></script><script>$("#simple").click(function(){
   $("#simpleUsage").modalify();
 });
 
@@ -28,4 +30,13 @@ $("#height").click(function(){
 $("#large").click(function(){
   $("#largeContent").modalify();
 });
+
+$("#close").click(function(){
+  $("#closeButton").modalify();
+});
+
+$("#otherElement").click(function(){
+  $("#closeButton").modalify("close");
+});
+
 </script><!-- Example page css--><link rel="stylesheet" type="text/css" href="./css/example.css"/></body></html>
