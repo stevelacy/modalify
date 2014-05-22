@@ -70,7 +70,19 @@ html
         br
         img(src="http://placekitten.com/g/600/400" alt="Random kitten image")
       .box
-        button#large.button(data-modalify="#largeContent") Large content
+        button#large.button Large content
+
+      #closeButton.hidden
+        .closeModalify.closeModalifyX &times;
+        h1 Using another element to close modal
+        br
+        pre.
+          $("#otherElement").click(function(){
+            $("#closeButton").modalify("close");
+          });
+        #otherElement.button Click to Close
+      .box
+        button#close.button Close with element
 
 
     // Required modalify css and js files
@@ -97,6 +109,16 @@ html
       $("#large").click(function(){
         $("#largeContent").modalify();
       });
+
+      $("#close").click(function(){
+        $("#closeButton").modalify();
+      });
+
+      $("#otherElement").click(function(){
+        $("#closeButton").modalify("close");
+      });
+
+
 
     // Example page css
     link(rel="stylesheet" type="text/css" href="./example.css")
