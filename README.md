@@ -1,5 +1,7 @@
 # Modalify
 
+[stevelacy.github.io/modalify](https://stevelacy.github.io/modalify/)
+
 #### Fully responsive, Sleak minimalism Flat design, Modal.
 
 A jQuery plugin for responsive modals
